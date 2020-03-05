@@ -27,7 +27,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
 		features = "Feature",
 		glue={"stepDefinition"},
-		tags= {"@firstMovie"},
+		/*tags= {"@firstMovie"},*/
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:"},
 		monochrome = false
 		)
