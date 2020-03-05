@@ -8,20 +8,47 @@
   <packaging>jar</packaging>
 
   <name>BookMySHow</name>
-  <url>http://maven.apache.org</url>
+  <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+
  
  	<properties>
    			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     		<maven.compiler.source>1.7</maven.compiler.source>
     		<maven.compiler.target>1.7</maven.compiler.target>
-  	</properties>	
-	
-	<repositories>
-    <repository>
-      <id>remote</id>
-      <url>https://repo.maven.apache.org/maven2/</url>
-    </repository>
-  </repositories>
+  	</properties>
+<!--   <repositories>
+        <repository>
+            <id>jboss-repo</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+  </repositories> -->
+  
+   <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
   
   	<build>
 		<plugins>
@@ -39,7 +66,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M4</version>
+					<version>2.22.2</version>
 					<configuration>
 				<suiteXmlFiles>
 <!-- TestNG suite XML files -->
